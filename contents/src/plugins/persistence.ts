@@ -11,7 +11,13 @@ declare module 'fastify' {
 }
 
 const persistencePlugin: FastifyPluginAsync = async (fastify) => {
-  const pool = mysql.createPool(settings.databaseUrl);
+  const pool = mysql.createPool({
+    host: settings.dbHost,
+    port: settings.dbPort,
+    user: settings.dbUsername,
+    password: settings.dbPassword,
+    database: settings.dbName,
+  });
   const db = drizzle(pool);
   fastify.decorate('db', db);
   fastify.addHook('onClose', async () => {

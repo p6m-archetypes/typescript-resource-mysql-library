@@ -1,11 +1,11 @@
 -- typescript-resource-mysql-library main module.
--- Renders Drizzle ORM MySQL persistence files:
+-- Renders Drizzle ORM MySQL wiring files:
 --   drizzle.config.ts
---   src/persistence/schema.ts
---   src/plugins/persistence.ts
+--   src/plugins/persistence.ts   (decorates `fastify.db` from the discrete DB_* settings)
 --
--- The calling archetype is responsible for adding the corresponding
--- pnpm dependencies to package.json:
+-- The calling archetype owns the domain: entities (src/persistence/schema.ts),
+-- schema bootstrap, and routes. It is also responsible for adding the
+-- corresponding pnpm dependencies to package.json:
 --   drizzle-orm, mysql2, drizzle-kit
 --
 -- API:
