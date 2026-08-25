@@ -1,0 +1,15 @@
+---
+description: "TypeScript MySQL Persistence — Drizzle ORM + mysql2 persistence plugin for Fastify pnpm services"
+summary: >
+  Generates drizzle.config.ts, src/persistence/schema.ts, and src/plugins/persistence.ts
+  with Drizzle ORM and mysql2 for any TypeScript pnpm service archetype.
+  Consumed as a library by service archetypes.
+authors: ["Jimmie Fulton <jimmie@ybor.ai>"]
+tags: ["library", "typescript", "persistence", "mysql", "drizzle"]
+
+requires:
+  archetect: "3.0.0"
+
+templating:
+  trim_blocks: true
+  lstrip_blocks: true
